@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', 'PerroController@index');
+Route::post('/perros', 'PerroController@store');
