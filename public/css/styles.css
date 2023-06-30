@@ -5,5 +5,12 @@
   border-radius: 50%;
   border: 1px solid #ccc;
   margin-right: 10px;
+}
 
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  border-radius: 15px;
+  border: none;
 }

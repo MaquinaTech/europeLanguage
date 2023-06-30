@@ -6,7 +6,7 @@
    <h1>Listado de Perros</h1>
    
    <div class="table-responsive">
-       <table class="table table-blue">
+       <table class="table table-primary">
            <thead>
                <tr>
                   <th>Imagen</th>
@@ -14,6 +14,7 @@
                   <th>Nombre</th>
                   <th>Tamaño</th>
                   <th>Color de pelo</th>
+                  <th>Acciones</th>
                </tr>
            </thead>
            <tbody>
@@ -24,6 +25,14 @@
                       <td>{{ $perro->name }}</td>
                       <td>{{ $perro->size }}</td>
                       <td>{{ $perro->hair_color }}</td>
+                      <td>
+                        <a href="{{ route('perros.edit', $perro->id) }}" class="btn btn-primary">Editar</a>
+                        <form action="{{ route('perros.destroy', $perro->id) }}" method="POST" class="d-inline">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                      </td>
                    </tr>
                @endforeach
            </tbody>
@@ -43,13 +52,4 @@
             }
         });
     </script>
-@endsection
-
-@section('styles')
-    <style>
-        .table-blue {
-            background-color: blue;
-            color: white;
-        }
-    </style>
 @endsection

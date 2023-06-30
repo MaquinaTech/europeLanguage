@@ -19,9 +19,10 @@ Route::get('/', 'PerrosController@index');
 Route::get('/perros', 'PerrosController@index')->name('perros.index');
 Route::post('/perros', 'PerrosController@store')->name('perros.store');
 Route::get('/perros/create', 'PerrosController@create')->name('perros.create');
-Route::get('/perros/{perro}', 'PerrosController@show')->name('perros.show');
-Route::get('/perros/{perro}/edit', 'PerrosController@edit')->name('perros.edit');
-Route::put('/perros/{perro}', 'PerrosController@update')->name('perros.update');
-Route::delete('/perros/{perro}', 'PerrosController@destroy')->name('perros.destroy');
+Route::get('/perros/{id}', 'PerrosController@show')->name('perros.show');
+Route::get('/perros/{id}/edit', 'PerrosController@edit')->name('perros.edit');
+Route::put('/perros/{id}', 'PerrosController@update')->name('perros.update');
+Route::delete('/perros/{id}', 'PerrosController@destroy')->name('perros.destroy');
+
 
 
