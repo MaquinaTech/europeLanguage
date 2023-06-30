@@ -89,4 +89,16 @@ class PerrosController extends Controller
 
     }
 
+    /**
+     * Remove the specified resource from storage.
+     * @param  \App\Perro  $perro
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Perro $perro)
+    {
+        $perro->delete();
+
+        return redirect()->route('perros.index')->with('success', 'Perro eliminado correctamente');
+    }
+
 }
